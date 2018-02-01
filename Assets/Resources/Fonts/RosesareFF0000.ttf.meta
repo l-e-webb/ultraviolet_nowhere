@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c1c5d4f932c23b84fa2f275b59d61b6e
+timeCreated: 1517442534
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Roses are FF0000
+  fontNames:
+  - Roses are FF0000
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

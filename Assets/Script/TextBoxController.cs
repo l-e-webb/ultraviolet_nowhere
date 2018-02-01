@@ -14,6 +14,7 @@ public class TextBoxController : MonoBehaviour {
 	Text portraitTextBox;
 	Text portraitMetadataBox;
 	Image portrait;
+    PortraitController portraitController;
 	SpriteSwitcher commLightSwitcher;
 	ConsoleController console;
 
@@ -27,6 +28,7 @@ public class TextBoxController : MonoBehaviour {
 		portrait = GameObject.Find("Portrait").GetComponent<Image>();
 		commLightSwitcher = GameObject.Find("CommsLight").GetComponent<SpriteSwitcher>();
 		console = GameObject.Find("ConsoleControlsCanvas").GetComponent<ConsoleController>();
+        portraitController = GetComponentInChildren<PortraitController>();
 		EndDialogue();
 		UpdateTextDisplay();
 	}
@@ -75,12 +77,7 @@ public class TextBoxController : MonoBehaviour {
 	}
 
 	public void SetTextOneOff(string text, bool centerInBox) {
-		portraitTextBox.text = "";
-		portraitTextBox.enabled = false;
-		portraitMetadataBox.text = "";
-		portraitMetadataBox.enabled = false;
-		portrait.sprite = null;
-		portrait.enabled = false;
+        Reset();
 		fullTextBox.text = text;
 		fullTextBox.enabled = true;
 		fullTextBox.alignment = centerInBox ? TextAnchor.MiddleCenter : TextAnchor.UpperLeft;
@@ -90,7 +87,20 @@ public class TextBoxController : MonoBehaviour {
 		SetTextOneOff(text, false);
 	}
 
-	void AdvanceDialogue() {
+    public void Reset() {
+        portraitTextBox.text = "";
+        portraitTextBox.enabled = false;
+        portraitMetadataBox.text = "";
+        portraitMetadataBox.enabled = false;
+        portrait.sprite = null;
+        portrait.enabled = false;
+        fullTextBox.text = "";
+        fullTextBox.enabled = false;
+        fullTextBox.alignment = TextAnchor.UpperLeft;
+        delay = -1;
+    }
+
+    void AdvanceDialogue() {
 		nodeIndex++;
 		if (nodeIndex >= transmission.nodes.Length) {
 			SetTextOneOff(Transmission.transmissionComplete, true);
@@ -101,15 +111,7 @@ public class TextBoxController : MonoBehaviour {
 	}
 
 	void UpdateTextDisplay() {
-		fullTextBox.text = "";
-		fullTextBox.enabled = false;
-		fullTextBox.alignment = TextAnchor.UpperLeft;
-		portraitTextBox.text = "";
-		portraitTextBox.enabled = false;
-		portraitMetadataBox.text = "";
-		portraitMetadataBox.enabled = false;
-		portrait.sprite = null;
-		portrait.enabled = false;
+        Reset();
 
 		if (!inDialogue) {
 			return;
@@ -130,6 +132,7 @@ public class TextBoxController : MonoBehaviour {
 			portraitMetadataBox.enabled = true;
 			portraitMetadataBox.text = transmission.metaData;
 			portrait.enabled = true;
+            portraitController.SetPortrait(currentNode.portrait);
 		} else {
 			fullTextBox.enabled = true;
 			fullTextBox.text = transmission.metaData + "\n\n" + currentNode.text;

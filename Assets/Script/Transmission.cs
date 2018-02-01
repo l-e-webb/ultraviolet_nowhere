@@ -42,8 +42,6 @@ public class Transmission {
 			node.text = bracketSplit[0].Trim(trimChars);
 			node.hasPortrait = false;
 		}
-		//Hardcoding portraits off:
-		node.hasPortrait = false;
 		return node;
 	}
 
