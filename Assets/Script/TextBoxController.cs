@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TextBoxController : MonoBehaviour {
 
+    public bool useAnimatedPortrait;
+
 	bool inDialogue = false;
 
 	Transmission transmission;
@@ -17,6 +19,7 @@ public class TextBoxController : MonoBehaviour {
     PortraitController portraitController;
 	SpriteSwitcher commLightSwitcher;
 	ConsoleController console;
+    PortraitAnimationControl portraitAnimation;
 
 	float delay = 0;
 
@@ -29,6 +32,7 @@ public class TextBoxController : MonoBehaviour {
 		commLightSwitcher = GameObject.Find("CommsLight").GetComponent<SpriteSwitcher>();
 		console = GameObject.Find("ConsoleControlsCanvas").GetComponent<ConsoleController>();
         portraitController = GetComponentInChildren<PortraitController>();
+        portraitAnimation = GetComponentInChildren<PortraitAnimationControl>();
 		EndDialogue();
 		UpdateTextDisplay();
 	}
@@ -94,6 +98,7 @@ public class TextBoxController : MonoBehaviour {
         portraitMetadataBox.enabled = false;
         portrait.sprite = null;
         portrait.enabled = false;
+        portraitAnimation.Disable();
         fullTextBox.text = "";
         fullTextBox.enabled = false;
         fullTextBox.alignment = TextAnchor.UpperLeft;
@@ -127,12 +132,24 @@ public class TextBoxController : MonoBehaviour {
 
 		Transmission.TransmissionNode currentNode = transmission.nodes[nodeIndex];
 		if (currentNode.hasPortrait) {
-			portraitTextBox.enabled = true;
-			portraitTextBox.text = currentNode.text;
-			portraitMetadataBox.enabled = true;
-			portraitMetadataBox.text = transmission.metaData;
-			portrait.enabled = true;
-            portraitController.SetPortrait(currentNode.portrait);
+            if (useAnimatedPortrait) {
+                if (portraitAnimation.SetPortrait(currentNode.portrait)) {
+                    portraitTextBox.enabled = true;
+                    portraitTextBox.text = currentNode.text;
+                    portraitMetadataBox.enabled = true;
+                    portraitMetadataBox.text = transmission.metaData;
+                } else {
+                    fullTextBox.enabled = true;
+                    fullTextBox.text = transmission.metaData + "\n\n" + currentNode.text;
+                }
+            } else {
+                portraitTextBox.enabled = true;
+                portraitTextBox.text = currentNode.text;
+                portraitMetadataBox.enabled = true;
+                portraitMetadataBox.text = transmission.metaData;
+                portrait.enabled = true;
+                portraitController.SetPortrait(currentNode.portrait);
+            }
 		} else {
 			fullTextBox.enabled = true;
 			fullTextBox.text = transmission.metaData + "\n\n" + currentNode.text;
