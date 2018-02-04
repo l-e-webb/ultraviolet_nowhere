@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>UltravioletNowhere</title>
+    <link rel="icon" href="TemplateData/Binary1">
+    <meta property="og:image" content="TemplateData/shareImage.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="759">
+    <meta property="og:image:height" content="427">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/UltravioletNowhere_web.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 1040px; height: 585px"></div>
+      <div class="footer">
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">Ultraviolet Nowhere (GGJ 2018)</div>
+        <div class="fullscreenText">Fullscreen: </div>
+      </div>
+      <div class="infoPane">
+      	<h2>About</h2>
+      	<p>
+      		<i>Ultraviolet Nowhere</i> is a game about searching space for distant transmissions that may be drifting between the stars.  Use the arrow keys to aim your telescope.  When you find a transmission, switch frequency bands using the console until you have the strongest signal, and home in on it with the fine-tuning slider.  Some transmissions have text, some are audio only.
+      	</p>
+      	<p>
+      		<i>Ultraviolet Nowhere</i> was made at the Enthusiasm Collective site in Portland, Oregon for Global Game Jam 2018.  Check out the jam page <a target="_BLANK" href="https://globalgamejam.org/2018/games/ultraviolet-nowhere">here</a>, or view the latest source code <a target="_BLANK" href="https://github.com/l-e-webb/ultraviolet_nowhere">here</a>.
+      	</p>
+      	<h2>Credits</h2>
+      	<p>
+      		Louis Webb - Programming, writing, additional music<br>
+      		Jonathan Minnamon - Art, additional programming<br>
+      		Aubrey Rose - Art, writing<br>
+      		Jeffrey Brice - Music and sound design<br>
+      	</p>
+      </div>
+    </div>
+  </body>
+</html>

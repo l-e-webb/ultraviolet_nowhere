@@ -1,0 +1,63 @@
+body {
+	background-color: black;
+	color: white;
+	font-family: Unispace, Courier, Helvetica, Verdana, Arial, sans-serif;
+}
+
+@font-face {
+	font-family: "Unispace";
+	src: url("unispace.ttf");
+}
+
+.webgl-content * {border: 0; margin: 0; padding: 0}
+.webgl-content {position: absolute; left: 50%; top: 0%; -webkit-transform: translate(-50%, 0%); transform: translate(-50%, 0%); margin-top: 1em;}
+
+.webgl-content .logo, .progress {position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+.webgl-content .logo {background: url('progressLogo.Light.png') no-repeat center / contain; width: 154px; height: 130px;}
+.webgl-content .progress {height: 18px; width: 141px; margin-top: 90px;}
+.webgl-content .progress .empty {background: url('progressEmpty.Light.png') no-repeat right / cover; float: right; width: 100%; height: 100%; display: inline-block;}
+.webgl-content .progress .full {background: url('progressFull.Light.png') no-repeat left / cover; float: left; width: 0%; height: 100%; display: inline-block;}
+
+.webgl-content .logo.Dark {background-image: url('progressLogo.Dark.png');}
+.webgl-content .progress.Dark .empty {background-image: url('progressEmpty.Dark.png');}
+.webgl-content .progress.Dark .full {background-image: url('progressFull.Dark.png');}
+
+.webgl-content .footer {margin-top: 5px; height: 38px; line-height: 38px; font-size: 18px;} 
+.webgl-content .footer .webgl-logo, .title, .fullscreen {height: 100%; display: inline-block; background: transparent center no-repeat;} 
+.webgl-content .footer .webgl-logo {background-image: url('webgl-logo.png'); width: 204px; float: left;}
+.webgl-content .footer .title {
+	margin-left: 10px;
+	float: left;
+
+}
+
+.webgl-content .footer .fullscreenText {
+	margin-right: 10px;
+	float: right;
+}
+.webgl-content .footer .fullscreen {
+	background-image: url('fullscreen.png');
+	width: 38px;
+	border: 2px solid black;
+	float: right;
+}
+
+.webgl-content .footer .fullscreen:hover {
+	border: 2px solid white;
+}
+
+.infoPane {
+	background-color: #DDD;
+	color: black;
+	border-radius: 1em;
+	padding: 1em;
+	margin-top: 1em;
+}
+
+.infoPane h2 {
+}
+
+.infoPane p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}

@@ -1,0 +1,13 @@
+{
+"companyName": "TangledWebGames",
+"productName": "UltravioletNowhere",
+"dataUrl": "UltravioletNowhere_web.data.unityweb",
+"asmCodeUrl": "UltravioletNowhere_web.asm.code.unityweb",
+"asmMemoryUrl": "UltravioletNowhere_web.asm.memory.unityweb",
+"asmFrameworkUrl": "UltravioletNowhere_web.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
