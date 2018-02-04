@@ -3,10 +3,10 @@
 public class BuildScript {
 
     private const string EXECUTABLE_NAME = "UltravioletNowhere";
-    private const string WINDOWS_PATH = "build/UltravioletNowhere_win";
-    private const string MAC_PATH = "build/UltravioletNowhere_mac";
-    private const string LINUX_PATH = "build/UltravioletNowhere_linux";
-    private const string WEB_PATH = "build/UltravioletNowhere_web";
+    private const string WINDOWS_PATH = "_build/UltravioletNowhere_win";
+    private const string MAC_PATH = "_build/UltravioletNowhere_mac";
+    private const string LINUX_PATH = "_build/UltravioletNowhere_linux";
+    private const string WEB_PATH = "_build/UltravioletNowhere_web";
     //private const string GH_PAGES_DISTRO_PATH = "webGL";
 
     [MenuItem("BuildTools/Build all")]
