@@ -5672,7 +5672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 207f86c7814edc748ae1a86ee962d5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useAnimatedPortrait: 0
+  useAnimatedPortrait: 1
 --- !u!1 &336986731
 GameObject:
   m_ObjectHideFlags: 0
@@ -21103,7 +21103,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1586940284341894, guid: 86290babe33dd6741b564a862569ac8d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 58340495772312582, guid: 86290babe33dd6741b564a862569ac8d,
         type: 2}
